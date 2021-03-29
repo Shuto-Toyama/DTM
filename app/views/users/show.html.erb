@@ -5,9 +5,9 @@
     </div>
     <div class="col-md-8">
       <div class="row">
-        <h1><%= @user.name %></h1>
+        <h1><%= @user.username %></h1>
         <% if @user == current_user %>
-          <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
+          <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
           <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
         <% end %>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -16,7 +16,7 @@
               <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">設定</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
+                  <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="list-group text-center">
@@ -28,9 +28,7 @@
         </div>
       </div>
       <div class="row">
-        <p>
-          <%= @user.email %>
-        </p>
+        <p>ユーザーネーム： <%= @user.name %></p>
       </div>
     </div>
   </div>
