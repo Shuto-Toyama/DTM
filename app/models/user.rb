@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :post,dependent: :destroy
+  has_many :post, dependent: :destroy
+  has_many :likes
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -15,5 +16,4 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
 end
