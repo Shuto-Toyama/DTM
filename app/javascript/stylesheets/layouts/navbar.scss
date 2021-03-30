@@ -4,6 +4,10 @@
   // background-image: url("~top_image.jpg");
   height: 50px;
 
+  a {
+    text-decoration: none;
+  }
+  
   &__mainLogo {
     // background-repeat: no-repeat;
     color: white;
