@@ -2,11 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i(show destroy)
 
-  def new
-    @post = Post.new
-    @post.photos.build
-  end
-
   def create
     @post = Post.new(post_params)
     if (@post.caption || @post.photos).present?
@@ -20,6 +15,8 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
+    @post.photos.build
     @posts = Post.limit(10).includes(:photos, :user).order("created_at DESC")
   end
 
