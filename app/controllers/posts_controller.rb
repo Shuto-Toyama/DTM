@@ -1,15 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: %i(show destroy)
-
-  def new
-    @post = Post.new
-    @post.photos.build
-  end
+  before_action :set_post, only: %i(show edit update destroy)
 
   def create
     @post = Post.new(post_params)
-    if @post.photos.present?
+    if (@post.caption || @post.photos).present?
       @post.save
       redirect_to root_path
       flash[:notice] = "投稿が保存されました"
@@ -20,10 +15,24 @@ class PostsController < ApplicationController
   end
 
   def index
+    @post = Post.new
+    @post.photos.build
     @posts = Post.limit(10).includes(:photos, :user).order("created_at DESC")
   end
 
   def show
+  end
+
+  def edit
+    @posts = Post.where(user: current_user)
+  end
+
+  def update
+    if @post.update_attributes(post_params)
+      redirect_to :root
+    else
+      render :edit
+    end
   end
 
   def destroy

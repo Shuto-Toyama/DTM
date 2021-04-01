@@ -1,12 +1,22 @@
 .navbar {
-  background-color: #5D99FF;
+  background: linear-gradient(-135deg, #2b2724, #736d77);
   // background-repeat: no-repeat;
   // background-image: url("~top_image.jpg");
   height: 50px;
 
+  a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+  }
+
+  .dropdown-menu {
+    background: linear-gradient(-135deg, #2b2724, #736d77);
+  }
+
   &__mainLogo {
     // background-repeat: no-repeat;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 24px;
     margin: 0 auto;
     padding: 1rem;
