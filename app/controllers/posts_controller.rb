@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: %i(show destroy)
+  before_action :set_post, only: %i(show edit update destroy)
 
   def create
     @post = Post.new(post_params)
@@ -21,6 +21,18 @@ class PostsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+    @posts = Post.where(user: current_user)
+  end
+
+  def update
+    if @post.update_attributes(post_params)
+      redirect_to :root
+    else
+      render :edit
+    end
   end
 
   def destroy
