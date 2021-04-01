@@ -21,12 +21,11 @@
         <li>
           <%= link_to "お問い合わせ", "#"%>
         </li>
-        <li>
-          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
-        </li>
+      </ul>
+      <ul class="navbar-nav ml-md-auto align-items-right">
         <li class="nav-item active dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.username%>
+            <%= current_user.name%>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to edit_user_registration_path, class: "dropdown-item" do%>
@@ -38,6 +37,9 @@
               <span class="mr-1">サインアウト</span>
             <% end %>
           </div>
+        </li>
+        <li>
+          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
         </li>
       </ul>
     </div>
