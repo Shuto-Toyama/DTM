@@ -39,6 +39,10 @@
               <div class="delete-post-icon">
               </div>
             <% end %>
+            <div class="list_header_action">
+              <%= link_to content_tag(:i, '', class: 'fas fa-trash'), post_path(post), method: :delete, class: "ml-auto mx-0 my-auto", data: { confirm: '投稿を削除しますか？'} %>
+              <%= link_to content_tag(:i, '', class: 'fas fa-pen'), "#" %>
+            </div>
           <% end %>
         </div>
         <span><%= post.caption %></span>

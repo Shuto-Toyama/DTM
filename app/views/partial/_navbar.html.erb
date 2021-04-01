@@ -29,8 +29,14 @@
             <%= current_user.username%>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "プロフィールを編集", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "サインアウト", destroy_user_session_path, method: :delete, data: { confirm: 'サインアウトしますか？'}, class: "dropdown-item" %>
+            <%= link_to edit_user_registration_path, class: "dropdown-item" do%>
+              <i class="fas fa-edit"></i>
+              <span class="mr-1">プロフィールを編集</span>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete, data: { confirm: 'サインアウトしますか？'}, class: "dropdown-item" do%>
+              <i class="fas fa-door-open"></i>
+              <span class="mr-1">サインアウト</span>
+            <% end %>
           </div>
         </li>
       </ul>
