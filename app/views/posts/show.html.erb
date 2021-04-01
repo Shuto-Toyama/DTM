@@ -27,13 +27,6 @@
               <%= @post.caption %>
             </strong>
           </div>
-          <div class="comment-post-id">
-            <div class="m-2">
-              <div id="comment-post-<%= @post.id.to_s %>">
-                <%= render 'comment_list', post: @post %>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="row parts">
           <div id="like-icon-post-<%= @post.id.to_s %>">
@@ -47,8 +40,13 @@
         <div id="like-text-post-<%= @post.id.to_s %>">
           <%= render "like_text", { likes: @post.likes } %>
         </div>
-        <div class="post-time"><%= time_ago_in_words(@post.created_at).upcase %>前</div>
-        <hr>
+        <div class="comment-post-id">
+          <div class="m-2">
+            <div id="comment-post-<%= @post.id.to_s %>">
+              <%= render 'comment_list', post: @post %>
+            </div>
+          </div>
+        </div>
         <div class="row parts" id="comment-form-post-<%= @post.id.to_s %>">
           <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
