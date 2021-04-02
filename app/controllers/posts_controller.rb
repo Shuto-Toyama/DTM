@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i(show edit update destroy)
+  PER_PAGE = 10
 
   def create
     post = Post.new(post_params)
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @post.photos.build
-    @posts = Post.limit(10).includes(:photos, :user).order("created_at DESC")
+    @posts = Post.includes(:photos, :user).order("created_at DESC").page(params[:page])
   end
 
   def show
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to :root
+      redirect_to :post
     else
       render :edit
     end
