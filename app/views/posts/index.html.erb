@@ -1,5 +1,5 @@
 <div class="d-flex flex-column align-items-center mt-3">
-  <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
+  <div class="col-md-8 col-sm-11 post-card">
     <div class="card">
       <div class="card-body">
         <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
@@ -8,7 +8,7 @@
               <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
             </div>
             <div class="col pl-0">
-              <%= f.text_field :text, class: "form-control border-0", placeholder: "投稿を書く" %>
+              <%= f.text_field :text, class: "form-control text-input border-1", placeholder: "投稿を書く(最大1000字)", required: true, maxlength: 1000 %>
             </div>
           </div>
           <div class="mb-3">
@@ -16,14 +16,14 @@
               <%= i.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
             <% end %>
           </div>
-          <%= f.submit "投稿する", class: "btn btn-primary" %>
+          <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 <% @posts.each do |post| %>
-  <div class="col-md-8 col-md-2 mx-auto">
+  <div class="col-md-8 col-md-2 mx-auto post-card">
     <div class="card-wrap">
       <div class="card">
         <div class="card-header align-items-center d-flex">
@@ -42,7 +42,7 @@
         </div>
         <span><%= post.text %></span>
         <% if post.photos.present? %>
-          <%= link_to(post_path(post)) do %>
+          <%= link_to post_path(post) do %>
             <%= image_tag post.photos.first.image.url, class: "card-img-top" %>
           <% end %>
         <% end %>
@@ -67,7 +67,7 @@
               <%= form_with model: [post, Comment.new], class: "w-100" do |f| %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <%= f.hidden_field :post_id, value: post.id %>
-                <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+                <%= f.text_field :comment, class: "form-control comment-input border-1", placeholder: "コメント ...", autocomplete: :off, required: true, maxlength: 100 %>
               <% end %>
             </div>
           </div>

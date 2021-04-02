@@ -3,15 +3,14 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i(show edit update destroy)
 
   def create
-    @post = Post.new(post_params)
-    if (@post.text || @post.photos).present?
-      @post.save
-      redirect_to root_path
+    post = Post.new(post_params)
+    if post.text.present?
+      post.save
       flash[:notice] = "投稿が保存されました"
     else
-      redirect_to root_path
       flash[:alert] = "投稿に失敗しました"
     end
+    redirect_to root_path
   end
 
   def index

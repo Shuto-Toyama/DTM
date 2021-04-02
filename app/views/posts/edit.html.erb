@@ -1,19 +1,19 @@
-div class="d-flex flex-column align-items-center mt-3">
-<div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
-  <div class="card">
-    <div class="card-body">
-      <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
-        <div class="form-group row mt-2">
-          <div class="col-auto pr-0">
-            <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
+<div class="d-flex flex-column align-items-center mt-3">
+  <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
+    <div class="card">
+      <div class="card-body">
+        <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
+          <div class="form-group row mt-2">
+            <div class="col-auto pr-0">
+              <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
+            </div>
+            <div class="col pl-0">
+              <%= f.text_field :text, class: "form-control border-1", required: true, maxlength: 1000 %>
+            </div>
           </div>
-          <div class="col pl-0">
-            <%= f.text_field :text, class: "form-control border-0", placeholder: "投稿を書く" %>
-          </div>
-        </div>
-        <%= f.submit "編集内容を投稿する", class: "btn btn-primary" %>
-        <%= link_to "戻る", root_path, class: "btn btn-secondary" %>
-      <% end %>
+          <%= f.submit "編集内容を投稿する", class: "btn btn-primary btn-block"%>
+          <%= link_to "戻る", post_path(@post), class: "btn btn-secondary btn-block"%>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
