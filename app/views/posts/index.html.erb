@@ -8,7 +8,7 @@
               <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
             </div>
             <div class="col pl-0">
-              <%= f.text_field :caption, class: "form-control border-0", placeholder: "投稿を書く" %>
+              <%= f.text_field :text, class: "form-control border-0", placeholder: "投稿を書く" %>
             </div>
           </div>
           <div class="mb-3">
@@ -41,7 +41,7 @@
             </div>
           <% end %>
         </div>
-        <span><%= post.caption %></span>
+        <span><%= post.text %></span>
         <% if post.photos.present? %>
           <%= link_to(post_path(post)) do %>
             <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
