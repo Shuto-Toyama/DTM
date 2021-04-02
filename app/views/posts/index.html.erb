@@ -13,7 +13,7 @@
           </div>
           <div class="mb-3">
             <%= f.fields_for :photos do |i| %>
-              <%= i.file_field :image %>
+              <%= i.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
             <% end %>
           </div>
           <%= f.submit "投稿する", class: "btn btn-primary" %>
@@ -30,8 +30,7 @@
           <%= link_to user_path(post.user), class: "no-text-decoration" do %>
             <%= image_tag avatar_url(post.user), class: "post-profile-icon" %>
           <% end %>
-          <%= link_to user_path(post.user), class: "black-color no-text-decoration",
-            title: post.user.username do %>
+          <%= link_to user_path(post.user), class: "black-color no-text-decoration",title: post.user.username do %>
             <strong><%= post.user.username %></strong>
           <% end %>
           <% if post.user_id == current_user.id %>
@@ -44,7 +43,7 @@
         <span><%= post.text %></span>
         <% if post.photos.present? %>
           <%= link_to(post_path(post)) do %>
-            <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+            <%= image_tag post.photos.first.image.url, class: "card-img-top" %>
           <% end %>
         <% end %>
         <div class="card-body">
