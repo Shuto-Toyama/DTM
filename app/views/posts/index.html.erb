@@ -1,5 +1,5 @@
 <div class="d-flex flex-column align-items-center mt-3">
-  <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
+  <div class="col-md-8 col-sm-11 post-card">
     <div class="card">
       <div class="card-body">
         <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
@@ -8,43 +8,36 @@
               <%= image_tag avatar_url(current_user), class: "post-profile-icon" %>
             </div>
             <div class="col pl-0">
-              <%= f.text_field :caption, class: "form-control border-0", placeholder: "投稿を書く" %>
+              <%= f.text_field :text, class: "form-control text-input border-1", placeholder: "投稿を書く(最大1000字)", required: true, maxlength: 1000 %>
             </div>
           </div>
-          <div class="mb-3">
+          <div class="d-flex flex-column align-items-center mb-3">
             <%= f.fields_for :photos do |i| %>
-              <%= i.file_field :image %>
+              <%= i.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
             <% end %>
           </div>
-          <%= f.submit "投稿する", class: "btn btn-primary" %>
+          <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 <% @posts.each do |post| %>
-  <div class="col-md-8 col-md-2 mx-auto">
+  <div class="col-md-8 col-md-2 mx-auto post-card">
     <div class="card-wrap">
       <div class="card">
         <div class="card-header align-items-center d-flex">
-          <%= link_to user_path(post.user), class: "no-text-decoration" do %>
+          <%= link_to user_path(post.user) do %>
             <%= image_tag avatar_url(post.user), class: "post-profile-icon" %>
           <% end %>
-          <%= link_to user_path(post.user), class: "black-color no-text-decoration",
-            title: post.user.username do %>
+          <%= link_to user_path(post.user), class: "black-color",title: post.user.username do %>
             <strong><%= post.user.username %></strong>
           <% end %>
-          <% if post.user_id == current_user.id %>
-            <div class="list_header_action">
-              <%= link_to content_tag(:i, '', class: 'fas fa-trash'), post_path(post), method: :delete, class: "ml-auto mx-0 my-auto", data: { confirm: '投稿を削除しますか？'} %>
-              <%= link_to content_tag(:i, '', class: 'fas fa-pen'), edit_post_path(post), class: "ml-auto mx-0 my-auto"%>
-            </div>
-          <% end %>
         </div>
-        <span><%= post.caption %></span>
+        <%= link_to post.text, post_path(post), class: "text-box"%>
         <% if post.photos.present? %>
-          <%= link_to(post_path(post)) do %>
-            <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+          <%= link_to post_path(post) do %>
+            <%=image_tag post.photos.first.image.url, class: "card-img-top" %>
           <% end %>
         <% end %>
         <div class="card-body">
@@ -68,7 +61,7 @@
               <%= form_with model: [post, Comment.new], class: "w-100" do |f| %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <%= f.hidden_field :post_id, value: post.id %>
-                <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+                <%= f.text_field :comment, class: "form-control comment-input border-1", placeholder: "コメント ...", autocomplete: :off, required: true, maxlength: 100 %>
               <% end %>
             </div>
           </div>
@@ -77,3 +70,4 @@
     </div>
   </div>
 <% end %>
+<%= paginate @posts %>

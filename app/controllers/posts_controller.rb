@@ -1,23 +1,23 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i(show edit update destroy)
+  PER_PAGE = 10
 
   def create
-    @post = Post.new(post_params)
-    if (@post.caption || @post.photos).present?
-      @post.save
-      redirect_to root_path
+    post = Post.new(post_params)
+    if post.text.present?
+      post.save
       flash[:notice] = "投稿が保存されました"
     else
-      redirect_to root_path
       flash[:alert] = "投稿に失敗しました"
     end
+    redirect_to root_path
   end
 
   def index
     @post = Post.new
     @post.photos.build
-    @posts = Post.limit(10).includes(:photos, :user).order("created_at DESC")
+    @posts = Post.includes(:photos, :user).order("created_at DESC").page(params[:page])
   end
 
   def show
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to :root
+      redirect_to :post
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:caption, photos_attributes: [:image]).merge(user_id: current_user.id)
+    params.require(:post).permit(:text, photos_attributes: [:image]).merge(user_id: current_user.id)
   end
 
   def set_post

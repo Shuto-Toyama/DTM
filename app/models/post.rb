@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :photos
+  paginates_per 20
 
   def liked_by(current_user)
     Like.find_by(user_id: current_user.id, post_id: id)

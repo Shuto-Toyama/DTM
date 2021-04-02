@@ -1,3 +1,7 @@
+a:hover {
+  text-decoration: none;
+}
+
 .post-profile-icon {
   height: 40px;
   width: 40px;
@@ -7,10 +11,6 @@
 
 .card-wrap {
   margin: 40px 0px;
-}
-
-.no-text-decoration:hover {
-  text-decoration: none;
 }
 
 .black-color {
@@ -29,10 +29,14 @@
   background-size: 36px !important;
 }
 
+.text-box {
+  color: #262626;
+  margin: 20px 40px;
+}
+
 .comment {
   margin-left: 8px;
-  background-image: url("~parts6");
-  background-repeat: no-repeat;
+  background-color: white;
   height: 36px;
   width: 36px;
   background-size: 40px !important;
