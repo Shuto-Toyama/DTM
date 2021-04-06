@@ -1,5 +1,21 @@
 body {
+padding: 70px 0px;
 background-image: linear-gradient(#cde0e9 50%, #f4c14e 80%, #d36950 90%);
 font-size: 14px;
   color: #262626;
+}
+
+.mw-sm {
+  max-width: 360px;
+}
+.mw-md {
+  max-width: 720px;
+}
+
+.mw-lg {
+  max-width: 960px;
+}
+
+.mw-xl {
+  max-width: 1200px;
 }
