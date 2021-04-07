@@ -9,11 +9,15 @@
           </div>
           <div class="form-group">
             <%= f.label :name, "名前" %>
-            <%= f.text_field :name, autofocus: true, class: "form-control" %>
+            <%= f.text_field :name, autofocus: true, class: "form-control", required: true, maxlength: 20 %>
           </div>
           <div class="form-group">
             <%= f.label :username, "ユーザーネーム" %>
-            <%= f.text_field :username, autofocus: true, class: "form-control" %>
+            <%= f.text_field :username, autofocus: true, class: "form-control", required: true, maxlength: 20 %>
+          </div>
+          <div class="form-group">
+            <%= f.label :message, "メッセージ"%>
+            <%= f.text_area :message, autofocus: true, class: "form-control", placeholder: "DTM connect Okinawaへメッセージをお願いします！！(最大200字)", required: true, maxlength: 200 %>
           </div>
           <div class="form-group">
             <%= f.label :email, "メールアドレス" %>

@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :username, uniqueness: true
+  validates :message, length: { maximum: 200 }
 
   def update_without_current_password(params, *options)
     if params[:password].blank? && params[:password_confirmation].blank?
