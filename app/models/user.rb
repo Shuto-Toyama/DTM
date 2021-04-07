@@ -4,9 +4,10 @@ class User < ApplicationRecord
   has_many :comments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  mount_uploader :profile_photo, ProfilePhotoUploader
   validates :name, presence: true, length: { maximum: 20 }
   validates :username, uniqueness: true
+  validates :message, length: { maximum: 200 }
 
   def update_without_current_password(params, *options)
     if params[:password].blank? && params[:password_confirmation].blank?

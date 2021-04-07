@@ -5,6 +5,7 @@ font-size: 14px;
   color: #262626;
 }
 
+// 最大最小サイズの指定
 .mw-sm {
   max-width: 360px;
 }
@@ -18,4 +19,28 @@ font-size: 14px;
 
 .mw-xl {
   max-width: 1200px;
+}
+
+// ページネーション
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {
+  border: none;
+  /*枠線をなくす*/
+  color: #696969;
+  /*文字の色を変える*/
+}
+
+.pagination>.active>a {
+  background: #93c9ff;
+  /*背景の色を変える*/
+  border-radius: 15px;
+  /*角を丸くする*/
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+  /*角を丸くする*/
 }
