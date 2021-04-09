@@ -12,3 +12,17 @@
     </div>
   </div>
 </div>
+<div class= "contents-title text-center">
+  <p><%= @user.username %>さんの作品一覧</p>
+</div>
+<div class="row">
+  <% @user.movies.each do |movie| %>
+    <div class="col-12 col-md-6 col-lg-4 movie-card-container">
+      <div class="card content-card border-dark mb-3">
+        <div class="embed-responsive embed-responsive-16by9">
+          <%= embed_youtube(movie.url) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

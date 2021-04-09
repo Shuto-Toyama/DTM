@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "movies/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users,
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
     resources :comments, only: %i(create destroy)
   end
   resources :introductions, only: %i(index)
+  resources :movies, only: %i(index)
 end
