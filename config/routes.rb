@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :photos, only: %i(create)
+    resources :movies, only: %i(index)
     resources :likes, only: %i(create destroy)
     resources :comments, only: %i(create destroy)
   end
   resources :introductions, only: %i(index)
-  resources :movies, only: %i(index)
 end
