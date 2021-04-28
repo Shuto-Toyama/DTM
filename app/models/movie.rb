@@ -1,6 +1,5 @@
 class Movie < ApplicationRecord
   belongs_to :user
-  belongs_to :post
   validates :title, presence: true
   validates :url, presence: true
   before_save do
