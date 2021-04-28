@@ -3,21 +3,24 @@
     <h1>作品一覧</h1>
     <p>コミュティメンバーの作品一覧です！！</p>
   </div>
-  <div class="row">
-    <% @movies.each do |movie| %>
-      <div class="col-12 col-md-6 col-lg-4 movie-card-container">
-        <div class="card content-card border-dark mb-3">
-          <%= link_to user_path(movie.user_id) do%>
-            <div class="embed-responsive embed-responsive-16by9">
-              <%= embed_youtube(movie.url) %>
-            </div>
-            <div class="card-body">
-              <p class="card-title">produced by <%= movie.user.name %></p>
-            </div>
-          <% end %>
+  <% if @movies.present?%>
+    <div class="row">
+      <% @movies.each do |movie| %>
+        <div class="col-12 col-md-6 col-lg-4 movie-card-container">
+          <div class="card content-card border-dark mb-3">
+            <%= link_to user_path(movie.user_id) do%>
+              <div class="embed-responsive embed-responsive-16by9">
+                <%= embed_youtube(movie.url) %>
+              </div>
+              <div class="card-body">
+                <p class="card-title">produced by <%= movie.user.username %></p>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h2>現在登録されている作品はありません。。</h2>
+  <% end %>
 </div>
-<%= paginate @movies %>
