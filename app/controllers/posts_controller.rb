@@ -20,9 +20,6 @@ class PostsController < ApplicationController
     @posts = Post.includes(:photos, :user).order("created_at DESC").page(params[:page])
   end
 
-  def show
-  end
-
   def edit
     @posts = Post.where(user: current_user)
   end
