@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
   get "movies/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   resources :introductions, only: %i(index)
   resources :movies, only: %i(index)
   resources :members, only: %i(index)
+  resources :contacts, only: %i(index)
 end
