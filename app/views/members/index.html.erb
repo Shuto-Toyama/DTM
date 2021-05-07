@@ -1,0 +1,18 @@
+<h1 class="text-center mb-4">メンバー</h1>
+<div class="table-container">
+  <table class="table table-striped">
+    <% @members.each.with_index(1) do |member,i| %>
+      <tr>
+        <th scope="row" class ="align-middle"><%= i %></th>
+        <td class="align-middle">
+          <%= image_tag member.profile_photo.url, class: "post-profile-icon vertical-align:middle" %>
+        </td>
+        <td class="align-middle">
+          <%= link_to user_path(member) do %>
+            <p><%= member.username%></p>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
