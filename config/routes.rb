@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "movies/index"
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users,
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :introductions, only: %i(index)
   resources :movies, only: %i(index)
   resources :members, only: %i(index)
+  resources :contacts, only: %i(index)
 end
