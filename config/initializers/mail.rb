@@ -1,5 +1,4 @@
 if Rails.env.production?
-  # 各自のドメインに置き換えること
   host = "dtm-connect-okinawa.herokuapp.com"
   # メール配信に失敗した場合にエラーを発生
   ActionMailer::Base.raise_delivery_errors = true
@@ -13,4 +12,7 @@ if Rails.env.production?
     domain: host,
     authentication: "plain",
   }
+elsif Rails.env.development?
+  ActionMailer::Base.default_url_options = { host: "localhost:3000" }
+  ActionMailer::Base.delivery_method = :letter_opener_web
 end
