@@ -62,5 +62,7 @@ gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'rename'
+gem 'fog-aws'
+
 
 
