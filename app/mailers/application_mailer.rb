@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  # 送信元として表示するメールアドレスと表示名
+  default from: "DTM connect OKINAWA <dtm.connect.okinawa@gmail.com>"
+  layout "mailer"
 end
