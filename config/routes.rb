@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :introductions, only: %i(index)
   resources :movies, only: %i(index)
   resources :members, only: %i(index)
-  resources :contacts, only: %i(index)
+  resources :contacts, only: %i(index create)
 end

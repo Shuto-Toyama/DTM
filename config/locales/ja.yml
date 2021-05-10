@@ -12,6 +12,7 @@ ja:
     models:
       user: ユーザー
       movie: 動画
+      contact: お問い合わせ
     attributes:
       user:
         name: 名前
@@ -19,6 +20,10 @@ ja:
       movie:
         title: タイトル
         url: URL
+      contact:
+        name: 氏名
+        email: メールアドレス
+        content: 内容
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"
