@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_042758) do
+ActiveRecord::Schema.define(version: 2021_05_10_040339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 2021_04_09_042758) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "contact_email", null: false
+    t.text "content", null: false
+    t.inet "remote_ip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -103,6 +113,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_042758) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "contacts", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "movies", "users"

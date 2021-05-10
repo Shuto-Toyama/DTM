@@ -1,8 +1,9 @@
 class User < ApplicationRecord
-  has_many :post, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :likes
   has_many :comments
   has_many :movies, dependent: :destroy
+  has_many :contacts, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   mount_uploader :profile_photo, ProfilePhotoUploader
