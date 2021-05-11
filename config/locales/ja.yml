@@ -13,17 +13,29 @@ ja:
       user: ユーザー
       movie: 動画
       contact: お問い合わせ
+      post: 投稿
+      photo: 投稿画像
+      contact: お問い合わせ
     attributes:
       user:
         name: 名前
         username: ユーザーネーム
+        profile_photo: アバター画像
+        message: メッセージ
       movie:
         title: タイトル
         url: URL
+      post:
+        text: 投稿内容
+        user: 投稿者名
+      photo:
+        image: 投稿画像名
+        post: テキスト投稿ID
       contact:
-        name: 氏名
-        email: メールアドレス
+        contact_name: 氏名
+        contact_email: メールアドレス
         content: 内容
+        remote_ip: IPアドレス
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"
