@@ -13,6 +13,8 @@ ja:
       user: ユーザー
       movie: 動画
       contact: お問い合わせ
+      post: 投稿
+      photo: 画像
     attributes:
       user:
         name: 名前
@@ -20,6 +22,11 @@ ja:
       movie:
         title: タイトル
         url: URL
+      post:
+        text: 投稿内容
+        user: 投稿者名
+      photo:
+        image: 投稿写真
       contact:
         name: 氏名
         email: メールアドレス
