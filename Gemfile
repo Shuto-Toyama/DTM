@@ -65,6 +65,7 @@ gem "mini_magick"
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'rename'
 gem 'fog-aws'
+gem "aws-sdk-s3", require: false
 
 
 
