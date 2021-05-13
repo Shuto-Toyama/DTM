@@ -3,8 +3,10 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
   has_many :movies, dependent: :destroy
+  has_many :sns_credentials
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook]
   mount_uploader :profile_photo, ProfilePhotoUploader
   validates :name, presence: true, length: { maximum: 20 }
   validates :username, uniqueness: true
@@ -19,5 +21,18 @@ class User < ApplicationRecord
     result = update_attributes(params, *options)
     clean_up_passwords
     result
+  end
+
+  def self.from_omniauth(auth)
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = sns.user || User.where(email: auth.info.email).first_or_initialize(
+      name: auth.info.name,
+      email: auth.info.email,
+    )
+    if user.persisted?
+      sns.user = user
+      sns.save
+    end
+    { user: user, sns: sns }
   end
 end
