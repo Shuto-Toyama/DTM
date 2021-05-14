@@ -24,7 +24,7 @@
           </div>
           <div class="form-group">
             <%= f.label :message, "メッセージ"%>
-            <%= f.text_area :message, autofocus: true, class: "form-control", placeholder: "DTM connect Okinawaへメッセージをお願いします！！(最大200字)", maxlength: 200 %>
+            <%= f.text_area :message, autofocus: true, class: "form-control", placeholder: "DTM connect OKINAWAへメッセージをお願いします！！(最大200字)", maxlength: 200 %>
           </div>
           <div class="form-group">
             <%= f.label :email, "メールアドレス" %>
@@ -40,6 +40,7 @@
           </div>
           <%= f.submit "変更する", class: "btn btn-primary" %>
           <%= link_to "戻る", user_path(current_user), class: "btn btn-secondary" %>
+          <%= link_to "アカウントを削除する",user_path(current_user.id), class: "btn btn-danger aligh right", method: :delete, "data-confirm" => "アプリ内の情報は完全に消去されます。本当にアカウントを削除しますか？" %>
         </div>
       <% end %>
     </div>

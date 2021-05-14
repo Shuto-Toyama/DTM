@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :movies, dependent: :destroy
   has_many :sns_credentials
   devise :database_authenticatable, :registerable,
@@ -28,6 +28,7 @@ class User < ApplicationRecord
     user = sns.user || User.where(email: auth.info.email).first_or_initialize(
       name: auth.info.name,
       email: auth.info.email,
+      username: auth.info.name,
     )
     if user.persisted?
       sns.user = user

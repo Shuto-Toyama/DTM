@@ -11,6 +11,8 @@
 
 .devise-card {
   border: none;
+  background-color: #fafafa;
+  
 }
 
 .form-wrap {
@@ -51,9 +53,5 @@ footer {
 @media screen and (max-width: 768px) {
   .main {
     padding: 75px 0;
-  }
-
-  .devise-card {
-    background-color: #fafafa;
   }
 }
