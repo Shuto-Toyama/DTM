@@ -41,7 +41,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       yield resource if block_given?
       respond_with_navigational(resource) { redirect_to after_sign_out_path_for(resource_name) }
     else
-      # パスワード認証に失敗したときの処理を書く
+      redirect_to root_path
     end
   end
 
