@@ -80,8 +80,4 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: utf8
   database: DTM_connect_OKINAWA_production
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
