@@ -20,12 +20,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @posts = Post.where(user: current_user)
   end
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to :post
+      redirect_to root_path
     else
       render :edit
     end
