@@ -31,3 +31,4 @@ yarn-debug.log*
 /vendor/bundle
 public/uploads/
 .env
+/config/database.yml
