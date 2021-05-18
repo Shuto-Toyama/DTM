@@ -4,12 +4,12 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?
-    storage :fog
-  else
-    storage :file
-  end
-  # storage :fog
+  # if Rails.env.production?
+  #   storage :fog
+  # else
+  #   storage :file
+  # end
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -20,7 +20,8 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url(*args)
     # For Rails 3.1+ asset pipeline compatibility:
-    ActionController::Base.helpers.asset_path("fallback/default_user_profile_photo.png")
+    "/images/fallback/" + [version_name, "default.png"].compact.join("_")
+    # ActionController::Base.helpers.asset_path("fallback/default_user_profile_photo.png")
   end
 
   #   # "/images/fallback/" + [version_name, "default.png"].compact.join("_")
