@@ -1,5 +1,4 @@
 .navbar {
-  background: linear-gradient(-135deg, #2b2724, #736d77);
   // background-repeat: no-repeat;
   // background-image: url("~top_image.jpg");
   height: 50px;
@@ -7,10 +6,6 @@
   a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-  }
-
-  .dropdown-menu {
-    background: linear-gradient(-135deg, #2b2724, #736d77);
   }
 
   &__mainLogo {
@@ -23,6 +18,7 @@
     &>li {
       color: rgb(255, 255, 255);
       margin-left: 20px;
+      font-size: large;
 
       &:first-child {
         margin-left: 0;
