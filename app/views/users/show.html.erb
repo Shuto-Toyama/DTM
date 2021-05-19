@@ -1,28 +1,32 @@
-<div class="profile-wrap ">
+<div class="profile-wrap mw-sm">
   <div class="row text-center">
     <div class="col-md-4 ">
       <%= image_tag @user.profile_photo.url, class: "round-img" %>
     </div>
     <div class="col-md-8">
       <h1><%= @user.username %></h1>
-      <ul>本当の名前 / <%= @user.name %></ul>
-      <%if @user.message.present?%>
-        <ul>メッセージ / <%= @user.message %></ul>
-      <% end %>
     </div>
+    <%if @user.message.present?%>
+      <p><%= @user.message %></p>
+    <% end %>
   </div>
 </div>
 <div class= "contents-title text-center">
-  <p><%= @user.username %>さんの作品一覧</p>
-</div>
-<div class="row">
-  <% @user.movies.each do |movie| %>
-    <div class="col-12 col-md-6 col-lg-4 movie-card-container">
-      <div class="card content-card border-dark mb-3">
-        <div class="embed-responsive embed-responsive-16by9">
-          <%= embed_youtube(movie.url) %>
+  <% if @user.movies.present?%>
+    <p><%= @user.username %>さんの作品一覧</p>
+  </div>
+  <div class="row">
+    <% @user.movies.each do |movie| %>
+      <div class="col-12 col-md-6 col-lg-4 movie-card-container">
+        <div class="card content-card border-dark mb-3">
+          <div class="embed-responsive embed-responsive-16by9">
+            <%= embed_youtube(movie.url) %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+  <% end %>
+  <% if current_user.id == @user.id %>
+    <%= link_to "プロフィールを編集する", edit_user_registration_path, class: "btn btn-primary aligh-items-right"%>
   <% end %>
 </div>

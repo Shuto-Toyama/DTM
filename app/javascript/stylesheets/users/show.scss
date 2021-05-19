@@ -1,5 +1,13 @@
 .profile-wrap {
-  margin: 40px 0px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p.break {
+    overflow-wrap: break-word;
+  }
+
 }
 
 .round-img {
@@ -8,25 +16,3 @@
   height: 120px;
 }
 
-.edit-profile-btn {
-  margin: 15px 0 0 15px;
-  font-weight: bold;
-  height: 26px;
-  line-height: 26px;
-  padding: 0 26px;
-  border-color: #dbdbdb;
-  font-size: 14px;
-}
-
-.setting {
-  height: 24px;
-  width: 24px;
-  background-color: transparent;
-  margin: 18px 0 0 10px;
-  background-size: 22px !important;
-  border: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-}

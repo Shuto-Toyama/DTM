@@ -1,5 +1,4 @@
 .navbar {
-  background: linear-gradient(-135deg, #2b2724, #736d77);
   // background-repeat: no-repeat;
   // background-image: url("~top_image.jpg");
   height: 50px;
@@ -7,11 +6,6 @@
   a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-
-  }
-
-  .dropdown-menu {
-    background: linear-gradient(-135deg, #2b2724, #736d77);
   }
 
   &__mainLogo {
@@ -22,7 +16,9 @@
 
   &-nav {
     &>li {
+      color: rgb(255, 255, 255);
       margin-left: 20px;
+      font-size: large;
 
       &:first-child {
         margin-left: 0;
@@ -33,10 +29,6 @@
         width: 24px;
         background-size: 22px !important;
         background-repeat: no-repeat;
-      }
-
-      .profile-icon {
-        background-image: url("~parts3.png");
       }
     }
   }
