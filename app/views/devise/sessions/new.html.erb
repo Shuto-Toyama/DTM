@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="card devise-card">
+  <div class="card devise-card ">
     <div class="form-wrap">
       <div class="form-group text-center">
         <h2 class="mx-auto">DTM connect OKINAWA</h2>
@@ -13,14 +13,16 @@
           <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "form-control" %>
         </div>
         <div class="actions">
-          <%= f.submit "サインインする", class: "btn btn-primary w-100" %>
+          <%= f.submit "サインイン", class: "btn btn-primary w-100" %>
+        </div>
+        <div class="actions">
           <%= link_to "Facebookアカウントでサインイン", user_facebook_omniauth_authorize_path, method: :post, class: "btn btn-primary w-100"%>
         </div>
       <% end %>
       <br>
       <p class="devise-link">
         アカウントをお持ちでないですか？
-        <%= link_to "登録する", new_user_registration_path %>
+        <%= link_to "新規登録する", new_user_registration_path %>
       </p>
     </div>
   </div>
