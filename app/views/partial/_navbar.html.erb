@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar">
   <div class="container">
     <%= link_to "DTM connect OKINAWA", root_path, class: "navbar__mainLogo" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,11 +35,9 @@
             <% end %>
           </div>
         </li>
-        <li>
-          <%= link_to user_path(current_user) do %>
-            <%=image_tag current_user.profile_photo.url, class: "nav-link post-profile-icon" %>
-          <% end %>
-        </li>
+        <%= link_to user_path(current_user) do %>
+          <%=image_tag current_user.profile_photo.url, class: "nav-link post-profile-icon" %>
+        <% end %>
       </ul>
     </div>
   </div>
