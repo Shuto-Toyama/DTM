@@ -20,6 +20,9 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-md-auto align-items-center">
+        <%= link_to user_path(current_user) do %>
+          <%=image_tag current_user.profile_photo.url, class: "nav-link post-profile-icon" %>
+        <% end %>
         <li class="nav-item active dropdown align-items-right">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.username%>
@@ -35,9 +38,6 @@
             <% end %>
           </div>
         </li>
-        <%= link_to user_path(current_user) do %>
-          <%=image_tag current_user.profile_photo.url, class: "nav-link post-profile-icon" %>
-        <% end %>
       </ul>
     </div>
   </div>
