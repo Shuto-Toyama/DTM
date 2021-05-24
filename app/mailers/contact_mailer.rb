@@ -1,5 +1,4 @@
 class ContactMailer < ApplicationMailer
-  # 管理者のメールアドレスに置き換えて下さい
   ADMIN_EMAIL = "dtm.connect.okinawa@gmail.com"
 
   def user_email(contact)

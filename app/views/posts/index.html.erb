@@ -11,12 +11,12 @@
               <%= f.text_field :text, class: "form-control text-input border-1", placeholder: "投稿を書く(最大1000字)", required: true, maxlength: 1000 %>
             </div>
           </div>
-          <div class="d-flex flex-column align-items-center mb-3">
+          <div class="d-flex flex-column mb-3">
             <%= f.fields_for :photos do |i| %>
               <%= i.file_field :image, accept: "image/png,image/jpeg,image/gif" %>
             <% end %>
           </div>
-          <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
+          <%= f.submit "投稿する", class: "btn btn-info btn-block" %>
         <% end %>
       </div>
     </div>
