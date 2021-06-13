@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @post.photos.build
-    @posts = Post.includes(:photos, :user).order("created_at DESC").page(params[:page])
+    @posts = Post.includes(:photos, :user).order("created_at DESC").page(params[:page]).per(PER_PAGE)
   end
 
   def edit
