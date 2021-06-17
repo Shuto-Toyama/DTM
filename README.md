@@ -22,14 +22,14 @@
 
 - 機能一覧
 
-  - ログイン機能
-  - Facebook アカウントログイン機能
-  - 管理者画面機能
-  - 画像投稿機能
+  - ログイン機能 'devise'
+  - Facebook アカウントログイン機能 'omniauth-facebook'
+  - 管理者画面機能 'activeadmin'
+  - 画像投稿機能 'carrierwave'
   - テキスト投稿機能
   - お問い合わせ機能
   - YouTube 動画閲覧機能
   - プロフィール編集機能
-  - ページネーション機能
+  - ページネーション機能 'kaminari'
 
 - 開発環境
