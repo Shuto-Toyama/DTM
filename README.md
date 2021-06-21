@@ -1,15 +1,16 @@
 # README
+独学半年の期間をを経て作りました、最初のポートフォリオです。よろしくお願いいたします。
 
 - タイトル
-  DTM connect OKINAWA
 
-- リンク
-  https://dtm-connect-okinawa.herokuapp.com/
+ [DTM connect OKINAWA] https://dtm-connect-okinawa.herokuapp.com/
 
 - 概要説明
+
   沖縄で活動する DTM ミュージシャンコミュニティ
 
 - 開発理由
+
   プロアマ問わず気軽にデスクトップミュージックの技術や情報をシェアできる空間を作りたいと感じたため。
 
 - 使用技術
@@ -31,5 +32,3 @@
   - YouTube 動画閲覧機能
   - プロフィール編集機能
   - ページネーション機能 'kaminari'
-
-- 開発環境
