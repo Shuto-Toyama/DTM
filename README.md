@@ -22,11 +22,10 @@
   - 管理者画面機能 activeadmin
   - 画像投稿機能 carrierwave
   - ページネーション機能 kaminari
-  - テキスト投稿機能
-  - お問い合わせ機能
+  - お問い合わせ機能 action maller
+  - テキスト投稿機能 
   - YouTube 動画閲覧機能
   - プロフィール編集機能
-  - ページネーション機能 'kaminari'
 
 ## 今後追加予定の機能
   - イベント開催カレンダー 'google calender'
