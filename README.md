@@ -17,10 +17,11 @@
   - bootstrap
 
 ## 機能一覧
-  - ログイン機能 'devise'
-  - Facebook アカウントログイン機能 'omniauth-facebook'
-  - 管理者画面機能 'activeadmin'
-  - 画像投稿機能 'carrierwave'
+  - ログイン機能 devise
+  - Facebook アカウントログイン機能 omniauth-facebook
+  - 管理者画面機能 activeadmin
+  - 画像投稿機能 carrierwave
+  - ページネーション機能 kaminari
   - テキスト投稿機能
   - お問い合わせ機能
   - YouTube 動画閲覧機能
@@ -31,3 +32,4 @@
   - イベント開催カレンダー 'google calender'
   - テストコード実装 'Rspec'
   - AWS EC2へデプロイ
+  
