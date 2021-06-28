@@ -1,9 +1,10 @@
 # README
 
-独学半年の期間を経て制作した最初のポートフォリオです。よろしくお願いいたします。
+独学半年の期間を経て制作した最初のポートフォリオです。
+よろしくお願いいたします。
 
-## [DTM connect OKINAWA](https://dtm-connect-okinawa.herokuapp.com)
-沖縄で活動する DTM ミュージシャンコミュニティです。
+## DTM connect OKINAWA]
+沖縄で活動する DTM(デスクトップミュージック) ミュージシャンのコミュニティアプリです。
 　
 ## DEMO
    - https://dtm-connect-okinawa.herokuapp.com
@@ -36,4 +37,3 @@
   - イベント開催カレンダー 'google calender'
   - テストコード実装 'Rspec'
   - AWS EC2へデプロイ
-  
