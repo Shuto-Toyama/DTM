@@ -2,20 +2,22 @@
 
 独学半年の期間を経て制作した最初のポートフォリオです。よろしくお願いいたします。
 
-## [DTM connect OKINAWA](https://dtm-connect-okinawa.herokuapp.com/)
+## [DTM connect OKINAWA](https://dtm-connect-okinawa.herokuapp.com)
 沖縄で活動する DTM ミュージシャンコミュニティです。
-
+　
+## DEMO
+   - https://dtm-connect-okinawa.herokuapp.com
 ## 開発理由
 オフラインでの音楽活動が難しくなった昨今、プロアマ問わず気軽にデスクトップミュージックの技術や情報をシェアできる空間を作りたいと感じたため。
-
-## 使用技術
+## 動作環境
   - ruby 2.7.2p137
   - Rails 6.0.3.6
   - AWS_S3
+  - Java Script
+  - JQuery 
+  - bootstrap
   - PostgreSQL 13.2
   - heroku/7.53.0
-  - bootstrap
-
 ## 機能一覧
   - ログイン機能 devise
   - Facebook アカウントログイン機能 omniauth-facebook
@@ -26,7 +28,10 @@
   - テキスト投稿機能 
   - YouTube 動画閲覧機能
   - プロフィール編集機能
-
+## 工夫した点
+  - レスポンシブ対応
+  - facebookページからのログイン
+  - シンプルで使い易いUI
 ## 今後追加予定の機能
   - イベント開催カレンダー 'google calender'
   - テストコード実装 'Rspec'
