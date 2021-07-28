@@ -1,9 +1,6 @@
 # README
 
-独学半年の期間を経て制作した最初のポートフォリオです。
-よろしくお願いいたします。
-
-## DTM connect OKINAWA]
+## DTM connect OKINAWA
 沖縄で活動する DTM(デスクトップミュージック) ミュージシャンのコミュニティアプリです。
 　
 ## DEMO
